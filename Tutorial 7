@@ -1,0 +1,152 @@
+''' P1
+keywords = ["and", "as", "assert", "break", "class", "continue", "def", "del", "elif", \
+            "else", "except", "False", "finally", "for", "from", "global", "if", "import", \
+            "in", "is", "lambda", "None", "nonlocal", "not", "or", "pass", "raise", "return", \
+            "True", "try", "while", "with", "yield"]
+
+var = input("Check variable validity: ")
+length = len(var)
+
+valid = True
+
+if length == 0:
+    print("Invalid. Cannot be empty")
+    valid = False
+elif var[0].isdigit():
+    print("Invalid. First character cannot be number")
+    valid = False
+elif not(var[0].isalpha() or var[0] == "_"):
+    print("Invalid. First charracter must be alphabet or _")
+    valid = False
+elif var in keywords:
+    print("Invalid. Variable name cannot be keywords")
+    valid = False
+else:
+    for char in var:
+        if not(char.isalnum() or char == "_"):
+            print("Invalid. Variable name can only contain numbers, alphabets and _")
+            valid = False
+            break
+        
+if valid:
+    print(f"{var} is a valid variable name")
+'''
+
+''' P2
+list1 = [[1,2,3], [4,5,6], [7,8,9], [10,11,12]]
+for row in list1:
+    for column in row:
+        print(column, end = " ")
+    print()
+
+print()
+
+for i in range(len(list1[0])):
+    for row in list1:
+        print(row[i], end = " ")
+    print()
+'''
+
+''' P3
+dateString = input("Key in dd/mm/yyyy: ")
+dates = dateString.split("/")
+
+print(dates)
+'''
+
+''' P4
+monthDict = {}
+monthDict[1] = "January"
+monthDict[2] = "February"
+monthDict[3] = "March"
+monthDict[4] = "April"
+monthDict[5] = "May"
+monthDict[6] = "June"
+monthDict[7] = "July"
+monthDict[8] = "August"
+monthDict[9] = "September"
+monthDict[10] = "October"
+monthDict[11] = "November"
+monthDict[12] = "December"
+
+dateString = input("Key in dd/mm/yyyy: ")
+dates = dateString.split("/")
+print(f"{dates[0]} {monthDict[int(dates[1])]}, {dates[2]}")
+'''
+
+''' P5
+vect1 = (10,20,30)
+vect2 = (3,4,5)
+
+
+sumvect = (vect1[0] + vect2[0], vect1[1] + vect2[1], vect1[2] + vect2[2])
+print(sumvect)
+
+dotprod = (vect1[0]*vect2[0] + vect1[1]*vect2[1] + vect1[2]*vect2[2])
+print(dotprod)
+'''
+
+''' P6i
+punctuations = [",", ".", "'", "(", ")", "\"", "!", "?", ";", ":"]
+sents = input("Key in sentence: ")
+words = sents.split(" ")
+
+for char in words:
+    if char in punctuations:
+        continue
+    elif char[-1] in punctuations:
+        print(char[:-1])
+    else:
+        print(char)
+'''
+punctuations = [",", ".", "'", "(", ")", "\"", "!", "?", ";", ":"]
+sents = input("Key in sentence: ")
+newsents = ""
+
+''' P6ii
+for char in sents:
+    if char not in punctuations:
+        newsents += char
+
+skipped = False
+for char in newsents:
+    if char != " ":
+        print(char, end = "")
+        skipped = False
+    elif char == " " and not skipped:
+        print()
+        skipped = True
+'''
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
